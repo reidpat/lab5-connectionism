@@ -1,0 +1,23 @@
+{
+    "RollerBall": {
+        "checkpoints": [
+            {
+                "steps": 2293,
+                "file_path": "results\\RollerBall1\\RollerBall\\RollerBall-2293.nn",
+                "reward": 1.0,
+                "creation_time": 1603400168.4870567
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2293,
+            "file_path": "results\\RollerBall1\\RollerBall.nn",
+            "reward": 1.0,
+            "creation_time": 1603400168.4870567
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.1.0",
+        "mlagents_version": "0.21.0",
+        "tensorflow_version": "2.3.1"
+    }
+}

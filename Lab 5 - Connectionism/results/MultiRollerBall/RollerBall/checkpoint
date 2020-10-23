@@ -1,0 +1,2 @@
+model_checkpoint_path: "RollerBall-1760.ckpt"
+all_model_checkpoint_paths: "RollerBall-1760.ckpt"
