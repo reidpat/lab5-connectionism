@@ -55,18 +55,17 @@ public class RollerAgent : Agent
         // TODO: determine when to give reward to the agent, the amount of reward,
         // and what happens after reward is given
         // Hint: check the Agents documentation for relevant functions to use
-        if (distanceToTarget < 1.42f) {
-            SetReward(1.0f);
-            EndEpisode();
-        }
+        
+        
+
 
         // the local (or relative) y position of the agent
         float yPos = this.transform.localPosition.y;
         // TODO: determine how to tell when the agent has fallen off the platform
         // and what to do when that happens
-        if (yPos < 0) {
-            EndEpisode();
-        }
+        
+
+
 
     }
 
