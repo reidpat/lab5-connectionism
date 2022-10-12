@@ -73,13 +73,13 @@ public class RollerAgent : Agent
 
     }
 
-    //Detect collisions between the GameObjects with Colliders attached
-    void OnCollisionEnter(Collision collision){
+    //Detect 
+    void OnTriggerEnter(Collider other){
 
          // TODO: determine when to give reward to the agent, the amount of reward,
         // and what happens after reward is given
         // Hint: check the Agents documentation for relevant functions to use
-        if (collision.gameObject.name == "Target")
+        if (other.name == "Target")
         {
             AddReward(1.0f);
             ResetTargetPosition();
