@@ -73,8 +73,7 @@ public class RollerAgent : Agent
         // Hint: check the Agents documentation for relevant functions to use
         if (collision.gameObject.tag == "Target")
         {
-            //If the GameObject has the same tag as specified, output this message in the console
-            Debug.Log("Hit Target");
+            
         }
     }
 
