@@ -26,10 +26,10 @@ public class RollerAgent : Agent
             this.rBody.transform.localPosition = new Vector3(0,0.5f, 0);
         }
 
-        resetTargetPosition();
+        ResetTargetPosition();
     }
 
-    public void resetTargetPosition(){
+    public void ResetTargetPosition(){
          Target.localPosition = new Vector3(Random.value * 8 - 4, 0.5f, Random.value * 8 - 4);
     }
 
@@ -70,12 +70,12 @@ public class RollerAgent : Agent
     }
 
     //Detect collisions between the GameObjects with Colliders attached
-    void OnCollisionEnter(Collision collision){
+void OnTriggerEnter(Collider other){
 
          // TODO: determine when to give reward to the agent, the amount of reward,
         // and what happens after reward is given
         // Hint: check the Agents documentation for relevant functions to use
-        if (collision.gameObject.name == "Target")
+        if (other.name == "Target")
         {
             
         }
