@@ -75,7 +75,7 @@ public class RollerAgent : Agent
          // TODO: determine when to give reward to the agent, the amount of reward,
         // and what happens after reward is given
         // Hint: check the Agents documentation for relevant functions to use
-        if (collision.gameObject.tag == "Target")
+        if (collision.gameObject.name == "Target")
         {
             
         }
