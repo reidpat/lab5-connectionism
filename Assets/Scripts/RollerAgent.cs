@@ -46,18 +46,12 @@ public class RollerAgent : Agent
     public override void OnActionReceived(ActionBuffers actions){
 
         
-        // Apply 2 actions to x and z coordinates of the ball (to move on the platform)
+        // The actions are the output from the neural network
+        // These actions are converted into a force which push the ball in some direction along the 2D plane (x and z axis)
         Vector3 controlSignal = Vector3.zero;
         controlSignal.x = actions.ContinuousActions[0];
         controlSignal.z = actions.ContinuousActions[1];
         rBody.AddForce(controlSignal * forceMultiplier);
-
-        // distance between the agent (the ball) and the target
-        float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
-        // TODO: determine when to give reward to the agent, the amount of reward,
-        // and what happens after reward is given
-        // Hint: check the Agents documentation for relevant functions to use
-        
         
 
 
@@ -69,6 +63,19 @@ public class RollerAgent : Agent
 
 
 
+    }
+
+    //Detect collisions between the GameObjects with Colliders attached
+    void OnCollisionEnter(Collision collision){
+
+         // TODO: determine when to give reward to the agent, the amount of reward,
+        // and what happens after reward is given
+        // Hint: check the Agents documentation for relevant functions to use
+        if (collision.gameObject.tag == "Target")
+        {
+            //If the GameObject has the same tag as specified, output this message in the console
+            Debug.Log("Hit Target");
+        }
     }
 
     // For manual check of controls 
