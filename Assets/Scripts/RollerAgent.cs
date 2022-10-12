@@ -26,10 +26,10 @@ public class RollerAgent : Agent
             this.rBody.transform.localPosition = new Vector3(0,0.5f, 0);
         }
 
-        resetTargetPosition();
+        ResetTargetPosition();
     }
 
-    public void resetTargetPosition(){
+    public void ResetTargetPosition(){
          Target.localPosition = new Vector3(Random.value * 8 - 4, 0.5f, Random.value * 8 - 4);
     }
 
@@ -63,6 +63,10 @@ public class RollerAgent : Agent
         float yPos = this.transform.localPosition.y;
         // TODO: determine how to tell when the agent has fallen off the platform
         // and what to do when that happens
+       if(yPos < 0){
+            AddReward(-1.0f);
+            EndEpisode();
+        }
         
 
 
@@ -77,7 +81,8 @@ public class RollerAgent : Agent
         // Hint: check the Agents documentation for relevant functions to use
         if (collision.gameObject.tag == "Target")
         {
-            
+            AddReward(1.0f);
+            ResetTargetPosition();
         }
     }
 
