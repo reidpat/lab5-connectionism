@@ -26,7 +26,11 @@ public class RollerAgent : Agent
             this.rBody.transform.localPosition = new Vector3(0,0.5f, 0);
         }
 
-        Target.localPosition = new Vector3(Random.value * 8 - 4, 0.5f, Random.value * 8 - 4);
+        resetTargetPosition();
+    }
+
+    public void resetTargetPosition(){
+         Target.localPosition = new Vector3(Random.value * 8 - 4, 0.5f, Random.value * 8 - 4);
     }
 
     // Get relevant information from the environment to effectively learn behavior
